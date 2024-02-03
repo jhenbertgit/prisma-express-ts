@@ -77,5 +77,4 @@ export const deleteUser = async (id: number): Promise<void> => {
   await db.user.delete({
     where: { id },
   });
-  return; // return void
 };

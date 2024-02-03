@@ -79,8 +79,8 @@ userRouter.delete("/:id", async (request: Request, response: Response) => {
   try {
     await UserService.deleteUser(id);
     return response
-      .status(204)
-      .json({ message: `User with ${id} is sucessfully deleted` });
+      .status(200)
+      .json({ message: `User with ID: ${id} is sucessfully deleted` });
   } catch (error) {
     return response.status(500).json({ message: (error as Error).message });
   }
