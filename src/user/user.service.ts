@@ -28,6 +28,12 @@ export const getUserById = async (id: number): Promise<User | null> => {
   });
 };
 
+export const getUserByEmail = async (email: string): Promise<User | null> => {
+  return db.user.findUnique({
+    where: { email },
+  });
+};
+
 export const createUser = async (
   user: Omit<User, "id" | "createdAt">
 ): Promise<User> => {
